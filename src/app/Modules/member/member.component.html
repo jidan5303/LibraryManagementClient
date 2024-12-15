@@ -1,0 +1,85 @@
+<div>
+    <a class="btn btn-primary" style="margin-left: 10px;" [routerLink]="['/book']">Go to Book List</a>
+    <a class="btn btn-primary" style="margin-left: 10px;" [routerLink]="['/borrowed-list']">Go to Borrow List</a>
+</div>
+
+<div style="text-align: right; margin-top: 20px;">
+    <button class="btn btn-primary" (click)="addMember()">Add Member</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Member ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Address</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let member of lstMember; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{member.firstName}}</td>
+            <td>{{member.lastName}}</td>
+            <td>{{ formatDateForInput(member.dateOfBirth) }}</td>
+            <td>{{member.address}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="onEditMember(member)">Edit</button>
+                <button class="btn btn-danger" (click)="onDeleteMember(member)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #MemberAddTemplate>
+    <div class="modal-header">
+        <h6 class="modal-title pull-left">Add Member</h6>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #memberForm="ngForm" (ngSubmit)="saveMember()">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" class="form-control" [(ngModel)]="objMember.firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" class="form-control" [(ngModel)]="objMember.lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control" [(ngModel)]="objMember.dateOfBirth" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" name="address" id="address" class="form-control" [(ngModel)]="objMember.address" required>
+            </div>
+            <div class="button-wrapper d-flex align-items-center justify-content-between gap-2 mt-3">
+                <button type="button" class="clear-button" (click)="modalRef?.hide()">Cancel</button>
+                <button type="submit" class="common-button">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #DeleteConfirmationModal>
+    <div class="modal-header">
+        <h6 class="modal-title pull-left">Delete Confirmation</h6>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to delete this member?</p>
+    </div>
+    <div class="modal-footer">
+        <div class="button-wrapper d-flex align-Suppliers-center justify-content-between gap-2 mt-3">
+            <button type="button" class="clear-button" (click)="modalRef?.hide()">No</button>
+            <button type="button" class="common-button" (click)="deleteMember()">Yes</button>
+        </div>
+    </div>
+  </ng-template>

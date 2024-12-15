@@ -1,0 +1,91 @@
+button {
+    border: none;
+    outline: none;
+    padding: 5px 15px !important;
+    font-weight: var(--weight-700) !important;
+    line-height: normal !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:disabled {
+    opacity: .5 !important;
+    cursor: not-allowed;
+}
+
+.theme-button {
+    background: var(--theme-color);
+    color: var(--white-color);
+    border-radius: 4px;
+}
+
+.theme-button:hover {
+    opacity: .9;
+    box-shadow: 0 1px 3px #00000025 !important;
+}
+
+.secondary-theme-button {
+    background: var(--secondary-theme-color);
+    color: var(--theme-color);
+    border-radius: 4px;
+    font-weight: var(--weight-500);
+}
+
+.secondary-theme-button:hover {
+    opacity: .9;
+    box-shadow: 0 1px 3px #00000025 !important;
+}
+
+.common-button {
+    background: #E9A42D;
+    border: 1px solid #E9A42D;
+    color: #fff;
+    padding: 8px 25px !important;
+    border-radius: 5px;
+    min-width: 140px;
+}
+
+.search-button {
+    background: #888;
+    border: 1px solid #888;
+    color: #fff;
+    padding: 11px 25px !important;
+    border-radius: 5px;
+    font-weight: 400 !important;
+}
+
+.search-button:hover {
+    opacity: .7;
+}
+
+.common-outline-button {
+    background: #fff;
+    border: 1px solid #E9A42D;
+    color: #E9A42D;
+    padding: 8px 25px !important;
+    border-radius: 5px;
+    min-width: 140px;
+}
+
+.common-outline-button:hover {
+    background: #E9A42D;
+    color: #fff;
+}
+
+.common-button:hover {
+    background: #F89D00;
+    border: 1px solid #F89D00;
+}
+
+.clear-button {
+    background: #fff;
+    border: 1px solid #ADADAD;
+    color: var(--text-color);
+    padding: 8px 25px !important;
+    border-radius: 5px;
+    min-width: 140px;
+}
+
+.clear-button:hover {
+    border-color: var(--sidebar-color);
+}

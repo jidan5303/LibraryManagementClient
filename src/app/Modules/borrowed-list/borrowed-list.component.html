@@ -1,0 +1,93 @@
+<div>
+    <a class="btn btn-primary" style="margin-left: 10px;" [routerLink]="['/member']">Go to Member List</a>
+    <a class="btn btn-primary" style="margin-left: 10px;" [routerLink]="['/book']">Go to Book List</a>
+</div>
+
+<div style="text-align: right; margin-top: 20px;">
+    <button class="btn btn-primary" (click)="addBorrowed()">Add Borrowed</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Borrowed ID</th>
+            <th>Book Title</th>
+            <th>Member Name</th>
+            <th>Borrowed Date</th>
+            <th>Return Date</th>
+            <th>Due Days</th>
+            <th>Overdue Status</th>
+            <th>Mark as Retuned</th>
+            <th>Delete Borrow Record</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let borrowed of lstBorrowed; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{borrowed.objBook?.title}}</td>
+            <td>{{borrowed.objMember?.firstName}} {{borrowed.objMember?.lastName}}</td>
+            <td>{{formatDateForInput(borrowed.borrowDate)}}</td>
+            <td>{{formatDateForInput(borrowed.returnDate)}}</td>
+            <td>{{ calculateDaysBetween(borrowed.borrowDate, borrowed.returnDate) }}</td>
+            <td>{{ calculateOverdueStatus(borrowed.borrowDate, borrowed.returnDate) }}</td>
+            <td>
+                <button *ngIf="borrowed.isReturned" class="btn btn-primary">Returned</button>
+                <button *ngIf="!borrowed.isReturned" class="btn btn-primary" (click)="markAsReturned(borrowed)">Mark as Returned</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="onDeleteBorrowed(borrowed)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #borrowedAddTemplate>
+    <div class="modal-header">
+        <h6 class="modal-title pull-left">Add Borrowed Book Record</h6>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #borrowedForm="ngForm" (ngSubmit)="saveBorrowed()">
+            <div class="form-group">
+                <label for="bookTitle">Book Title</label>
+                <select name="bookTitle" id="bookTitle" class="form-control" [(ngModel)]="objBorrowed.bookID" required>
+                    <option *ngFor="let book of lstBook" [value]="book.bookID">{{book.title}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="memberName">Member Name</label>
+                <select name="memberName" id="memberName" class="form-control" [(ngModel)]="objBorrowed.memberID" required>
+                    <option *ngFor="let member of lstMember" [value]="member.memberID">{{member.firstName}} {{member.lastName}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="borrowDate">Borrow Date</label>
+                <input type="date" name="borrowDate" id="borrowDate" class="form-control" [(ngModel)]="objBorrowed.borrowDate" required>
+            </div>
+            <div class="button-wrapper d-flex align-items-center justify-content-between gap-2 mt-3">
+                <button type="button" class="clear-button" (click)="modalRef?.hide()">Cancel</button>
+                <button type="submit" class="common-button">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #DeleteConfirmationModal>
+    <div class="modal-header">
+        <h6 class="modal-title pull-left">Delete Confirmation</h6>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Are you sure you want to delete this record?</p>
+    </div>
+    <div class="modal-footer">
+        <div class="button-wrapper d-flex align-Suppliers-center justify-content-between gap-2 mt-3">
+            <button type="button" class="clear-button" (click)="modalRef?.hide()">No</button>
+            <button type="button" class="common-button" (click)="deleteRecord()">Yes</button>
+        </div>
+    </div>
+</ng-template>

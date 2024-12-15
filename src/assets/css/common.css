@@ -1,0 +1,220 @@
+button {
+    padding: 3px 20px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    outline: none !important;
+    box-shadow: none !important;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--header-text);
+}
+
+h1.active,
+h2.active,
+h3.active,
+h4.active,
+h5.active,
+h6.active {
+    color: var(--secondary-theme-color);
+}
+
+p {
+    color: var(--body-text);
+    font-size: var(--font-13);
+    font-weight: var(--weight-400);
+}
+
+a.theme-link {
+    color: var(--theme-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.theme-link:hover {
+    text-decoration: underline;
+}
+
+a.danger-link {
+    color: var(--danger-color) !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.danger-link:hover {
+    text-decoration: underline;
+}
+
+a.primary-link {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.primary-link:hover {
+    text-decoration: underline;
+}
+
+a.success-link {
+    color: var(--success-color) !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a.success-link:hover {
+    text-decoration: underline;
+}
+
+table.voltex-table,
+table.voltex-table tr td {
+    padding: 5px 10px;
+}
+
+/* thead tr td:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+}
+
+tr td:not(:last-child) {
+    border-right: 1px solid var(--thead-color);
+} */
+
+table.voltex-table tr {
+    border-bottom: 1px solid var(--thead-color) !important;
+}
+
+table.voltex-table tbody {
+    display: block;
+    height: 100%;
+    /* width: calc(100% - 7px); */
+    overflow-y: overlay;
+    /* position: relative; */
+}
+
+table.voltex-table tbody tr {
+    height: 35px;
+    font-weight: var(--weight-500);
+}
+
+table.voltex-table thead,
+table.voltex-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    font-size: var(--font-12);
+    font-weight: 400;
+}
+
+table.voltex-table thead {
+    position: relative;
+    /* width: calc(100% - 7px); */
+    height: 40px;
+    /* text-transform: uppercase; */
+    /* border-radius: 4px; */
+    background: #EDEDED !important;
+    color: var(--light-text-color);
+    font-size: var(--font-12);
+    font-weight: var(--weight-500);
+}
+
+table.voltex-table tbody tr td:last-child,
+table.voltex-table thead tr td:last-child {
+    text-align: end;
+}
+
+table.voltex-table {
+    width: 100%;
+    border-bottom: 1px solid #AFAFAF;
+}
+
+.tooltipClass {
+    font-size: var(--font-11) !important;
+}
+
+.body-wrapper-card {
+    height: calc(100vh - 80px);
+    background: var(--white-color);
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: 0 1px 2px #00000015;
+}
+
+.body-wrapper {
+    display: grid;
+    grid-template-columns: 200px auto;
+    height: 100%;
+    font-size: var(--font-12);
+}
+
+.wrapper-menu {
+    border-right: 1px solid var(--border-color);
+}
+
+.wrapper-menu li {
+    position: relative;
+    padding: 10px 20px;
+    font-size: var(--font-12);
+    font-weight: var(--weight-500);
+    color: var(--theme-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.wrapper-menu li:hover {
+    color: var(--secondary-theme-color);
+    transform: scale(.98);
+}
+
+.wrapper-menu li.active {
+    color: var(--secondary-theme-color);
+    background: #39c5f815;
+}
+
+.wrapper-menu li.active::after {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 6px 0 0 6px;
+    background: var(--secondary-theme-color);
+}
+
+.wrapper-content {
+    padding: 10px 20px;
+    padding-bottom: 0;
+}
+
+.wrapper-content-header {
+    font-size: var(--font-13);
+    font-weight: var(--weight-500);
+    border-bottom: 1px solid #e0e0e035;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.voltex-card {
+    border-radius: 6px !important;
+    border: none !important;
+    padding: 20px 30px;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+}

@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import "~ngx-toastr/toastr.css";
+@import url('./lib/bs-datepicker.css');
+@import url('./common.css');
+@import url('./color.css');
+@import url('./button.css');
+@import url('./font-size.css');
+@import url('./font-weight.css');
+@import url('./spacing.css');
+
+/* styling scrollbar */
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #dde2eb;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccca1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc55;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-color) !important;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'DM Sans', sans-serif !important;
+    overflow-x: hidden;
+}
+
+main {
+    position: fixed;
+    width: calc(100vw - 250px);
+    height: 100vh;
+    top: 0;
+    left: 250px;
+    padding: 30px;
+}
+
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+ul li {
+    list-style: none;
+}
+
+p {
+    margin: 0 !important;
+}
+
+a.secondary-theme-link {
+    color: var(--secondary-theme-color) !important;
+    text-decoration: none;
+    font-size: var(--font-12);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+a.secondary-theme-link:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group.ico i {
+    position: absolute;
+    bottom: 13px;
+    right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-group.ico i:hover {
+    color: #888 !important;
+}
+
+select.form-select,
+input.form-control {
+    border: 1px solid #e0e0e0;
+    height: 42px;
+    border-radius: 5px;
+    font-size: var(--font-12);
+    outline: none !important;
+    box-shadow: none !important;
+    padding-top: 6px;
+}
+
+input.form-control:focus {
+    border-color: var(--sidebar-color);
+}
+
+.form-label {
+    font-size: var(--font-12);
+    font-weight: var(--weight-400);
+    margin-bottom: 5px !important;
+    position: absolute;
+    top: 12px;
+    left: 13px;
+}
+
+select.form-select~.form-label,
+input.form-control.dateField~.form-label,
+input.form-control[type='date']~.form-label,
+input.form-control:not(:invalid)~.form-label,
+input.form-control:focus~.form-label {
+    font-size: 10px;
+    color: #888;
+    top: 2px;
+}
+
+input.form-control::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #e0e0e0;
+    font-size: 11px;
+}
+
+input.form-control::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #e0e0e0;
+    font-size: 11px;
+}
+
+input.form-control:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #e0e0e0;
+    font-size: 11px;
+}
+
+input.form-control:-moz-placeholder {
+    /* Firefox 18- */
+    color: #e0e0e0;
+    font-size: 11px;
+}
+
+.invalid-feedback {
+    font-size: var(--font-11) !important;
+    font-weight: var(--weight-500);
+    position: absolute;
+    bottom: -6px;
+    background: #ffe8e7;
+    color: var(--danger-color) !important;
+    border-radius: 2px;
+    padding: 0px 12px;
+    width: fit-content !important;
+    right: 0;
+}
+
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+    border-color: var(--danger-color) !important;
+    background-image: none !important;
+}
+
+.ng-bar-placeholder {
+    height: 4px !important;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.w-12 {
+    width: 12%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-8 {
+    width: 8%;
+}
+
+.w-7 {
+    width: 7%;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-3 {
+    width: 3%;
+}
+
+.w-2 {
+    width: 2%;
+}
+
+.theme-green .bs-datepicker-head,
+.theme-green .bs-datepicker-body table td span.selected,
+.theme-green .bs-datepicker-body table td.selected span,
+.theme-green .bs-datepicker-body table td span[class*=select-]:after,
+.theme-green .bs-datepicker-body table td[class*=select-] span:after {
+    background-color: var(--sidebar-color) !important;
+}
+
+.bs-datepicker-body table td span,
+.bs-datepicker-body table th {
+    font-size: 12px !important;
+}
+
+.voltex-modal-lg {
+    max-width: calc(100vw - 20%) !important;
+}
+
+.replace-history {
+    max-width: calc(100vw - 50%) !important;
+}
+
+.logo-img {
+    width: 50% !important;
+}
