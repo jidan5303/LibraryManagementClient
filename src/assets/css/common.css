@@ -78,8 +78,8 @@ a.success-link:hover {
     text-decoration: underline;
 }
 
-table.voltex-table,
-table.voltex-table tr td {
+table.LMS-table,
+table.LMS-table tr td {
     padding: 5px 10px;
 }
 
@@ -91,11 +91,11 @@ tr td:not(:last-child) {
     border-right: 1px solid var(--thead-color);
 } */
 
-table.voltex-table tr {
+table.LMS-table tr {
     border-bottom: 1px solid var(--thead-color) !important;
 }
 
-table.voltex-table tbody {
+table.LMS-table tbody {
     display: block;
     height: 100%;
     /* width: calc(100% - 7px); */
@@ -103,13 +103,13 @@ table.voltex-table tbody {
     /* position: relative; */
 }
 
-table.voltex-table tbody tr {
+table.LMS-table tbody tr {
     height: 35px;
     font-weight: var(--weight-500);
 }
 
-table.voltex-table thead,
-table.voltex-table tbody tr {
+table.LMS-table thead,
+table.LMS-table tbody tr {
     display: table;
     width: 100%;
     table-layout: fixed;
@@ -117,7 +117,7 @@ table.voltex-table tbody tr {
     font-weight: 400;
 }
 
-table.voltex-table thead {
+table.LMS-table thead {
     position: relative;
     /* width: calc(100% - 7px); */
     height: 40px;
@@ -129,12 +129,12 @@ table.voltex-table thead {
     font-weight: var(--weight-500);
 }
 
-table.voltex-table tbody tr td:last-child,
-table.voltex-table thead tr td:last-child {
+table.LMS-table tbody tr td:last-child,
+table.LMS-table thead tr td:last-child {
     text-align: end;
 }
 
-table.voltex-table {
+table.LMS-table {
     width: 100%;
     border-bottom: 1px solid #AFAFAF;
 }
@@ -206,7 +206,7 @@ table.voltex-table {
     margin-bottom: 5px;
 }
 
-.voltex-card {
+.LMS-card {
     border-radius: 6px !important;
     border: none !important;
     padding: 20px 30px;
